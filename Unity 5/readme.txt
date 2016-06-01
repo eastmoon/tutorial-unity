@@ -18,4 +18,16 @@ http://unity3d.com/cn/learn/tutorials/topics/graphics
 ● Script
 http://unity3d.com/cn/learn/tutorials/topics/scripting
 
+◎ Unity IDE problem
+
+---------------------------
+Android sdk build error "sdk tools version 0 < 21"
+http://answers.unity3d.com/questions/652886/android-sdk-build-error-1.html
+
+Unity 5.3 >>
+Edit -> Preferences > External Tools > Android SDK Location
+Setting location the same with Android Studio download location.
+
+---------------------------
+
 

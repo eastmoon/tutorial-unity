@@ -48,19 +48,9 @@ http://unity3d.com/cn/learn/tutorials/modules/beginner/live-training-archive/cre
 但對於Scene的運用，在解讀上反倒有些是Flash中的多重swf檔使用；有需要才載入的材質庫或物件庫。
 http://blogs.unity3d.com/2014/08/04/multi-scene-editing/
 
-◎ Retrieve object
-http://theunity3d.blogspot.tw/2012/04/find.html
-http://answers.unity3d.com/questions/15801/finding-cameras.html
-https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html
 
 ◎ Timeline
 http://docs.unity3d.com/Manual/TimeFrameManagement.html
-
-◎ Dynamcie Object
-http://docs.unity3d.com/Manual/CreateDestroyObjects.html
-概念上，Unity的處理方式，應該是先以Object Resource中取得指定名稱的物體，並加以複製於場景內。
-
-但場景如何控制動態產生的物體並刪除，則需要細項考慮。
 
 ◎ Render Texture
 
