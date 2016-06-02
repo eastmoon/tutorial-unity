@@ -31,6 +31,10 @@ GameObject.Find(string objectName)
 
 若取回內容需要轉型為Component，以此方式轉型為指定的型態。
 
+(GameObject.Find(string objectName)).GetComponentInChildren<component type>();
+
+若欲取回內容內包含的擁有特定元件的子物件，以此方式指定子物件的元件型態。
+
 ※ 相關文章參考：
 ---------------------------
 尋找物件的方法 各種的Find
@@ -42,7 +46,6 @@ http://answers.unity3d.com/questions/15801/finding-cameras.html
 GameObject.GetComponent
 https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html
 ---------------------------
-
 
 ◎ Dynamcie Object
 
