@@ -6,7 +6,7 @@ http://unity3d.com/cn/learn/tutorials/topics/animation
 Unity中控制動畫共有下列主要物件：
 
 Animator 控制並撥放一個 AnimationClip
-Animaion  控制一個Controller ( GameObject )內擁有的複數個 AnimationClip
+Animaion 控制一個Controller ( GameObject )內擁有的複數個 AnimationClip
 AnimationClip 擁有對象參數的 AnimationCurve
 AnimationClip 擁有對象參數的 AnimationEvent
  
@@ -53,9 +53,52 @@ AnimationCurve 等同 Easing Function，但僅有Linear、EaseInOut、BezierPoin
 可若著眼於簡單的UI轉場，僅需要運用到AnimationClip就已經極為複雜。
 但對於AnimationCurve的過度簡亦設計與對物件屬性的配合設計，若有必要則需重新思考軟體架構來提高運用靈活與自由度。
 
-◎ AnimationCurve
+◎ AnimationCurve and Clip
+Demo : AnimationCurve&Clip
+https://docs.unity3d.com/ScriptReference/AnimationCurve.html
+https://docs.unity3d.com/ScriptReference/AnimationClip.html
+http://docs.unity3d.com/ScriptReference/Keyframe.html
 
-◎ AnimationClip
+1. 關係
+
+2. 動態程式控制
+
+2.1 時間計算
+
+2.2 切線(Tangent)計算 
+
+3. Curve、Tween，動態產生曲線物件。
+
+
+
+
+※ 相關文章參考：
+---------------------------
+AnimationClip.SetCurve
+http://docs.unity3d.com/ScriptReference/AnimationClip.SetCurve.html
+
+Application.targetFrameRate
+http://docs.unity3d.com/ScriptReference/Application-targetFrameRate.html
+
+Editing Curves
+http://docs.unity3d.com/Manual/EditingCurves.html
+
+EditorAnimationCurveExtension
+http://wiki.unity3d.com/index.php/EditorAnimationCurveExtension
+
+Create a Sprite Animation Clip in Code
+http://answers.unity3d.com/questions/694546/create-a-sprite-animation-clip-in-code.html
+http://answers.unity3d.com/questions/331268/a-simple-animation-clip-scripting-control-example.html
+
+How can I convert AnimationCurve.in/outTangent to an angle
+http://answers.unity3d.com/questions/48590/how-can-i-convert-animationcurveinouttangent-to-an.html
+http://answers.unity3d.com/questions/146760/how-do-i-modify-a-keyframecurves-tangent-in-code.html
+
+
+
+
+
+
 
 
 
