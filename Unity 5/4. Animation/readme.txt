@@ -61,16 +61,88 @@ http://docs.unity3d.com/ScriptReference/Keyframe.html
 
 1. 關係
 
+對一個動畫設定並執行的理想構成：
+物理運動公式、運動曲線、運算元集合
+
+理想結構上，透過物理運算公式以及參數( 起始值、終止值、所需時間 )產生運動曲線。
+在將複數個運動曲線( 每個曲線對應一個物件屬性 )做成集合，並統一執行。 
+
+而在Unity，其實際構成：
+運動曲線、運算元集合
+
+使用者透過設定好運動曲線( 起始值、起始時間、終止值、終止時間 )，構成一個平滑( Smooth )、線性( Linear )、進出緩衝( EaseInOut )的運動路徑。
+在將複數個運動曲線( 每個曲線對應一個物件屬性 )做成集合，交付動畫執行管理物件( Animation、Animator )來做執行管理。
+ 
 2. 動態程式控制
+
+2.1 基本構成
+
+A. 建立與設定運算曲線
+
+{
+	// 建立
+	AnimationCurve curve = new AnimationCurve();
+        // 設定曲線關鍵點
+	curve.AddKey(new Keyframe(0, 0, 0, 0));
+        curve.AddKey(1, 100);
+	// 指定曲線輸出在時間為0.5的數值
+	curve.Evaluate(0.5)
+}
+
+B. 建立與設定運算元集合
+
+{
+	// 建立
+	AnimationClip clip = new AnimationClip();
+	// 設定動畫為舊有系統，亦即供給Animation，而非Animator
+	clip.legacy = true;
+	// 設定運動曲線與關聯，設定對物件區域座標X軸，依據曲線數據改變
+        clip.SetCurve("", typeof(Transform), "localPosition.x", curve);
+}
+
+C. 動畫管理物件
+
+Unity的動畫共有兩種管理物件，且皆為物件( MonoBehaviour )的元件( Component )。
+Animation：將運算元集合，以名稱方式歸類；在需執行時呼叫其名。
+Animator：本質與Animation相同，但視每個運算元為狀態，而狀態間存在著關係並連動運作著。
+
+{	
+	// 取得動畫管理物件 Animation
+	Animation anim = [targetObject].GetComponent<Animation>();
+	// 若不存在則新增 Animation
+	if (anim == null)
+		anim = [targetObject].gameObject.AddComponent<Animation>();
+}
 
 2.1 時間計算
 
+動畫系統中，設定動畫所有的時間數值皆為秒，系統會依據當下的FPS切換成對應Frame的當下值，以確保運算結果符合時間需求。
+
+預設上，Unity內定的FPS為依據對應裝置的重繪效能調整，約在50到60FPS( Frame per Second )間。
+但亦可使用Application.targetFrameRate設定其FPS為定值。
+
 2.2 切線(Tangent)計算 
 
+平滑( Smooth )運動曲線，是以貝茲曲線計算其平滑線段。
+使用Animation View( Windows => Animation )可以觀察其操作方式。
+
+為了調整其平滑狀態，對單一關鍵點設定切線(Tangent)，即可改變曲線的平滑方向。
+
+Keyframe(Time, Value, InTangent, OutTangent)
+
+針對曲線的關鍵點，可以用上數據結構定義。
+然而，依據文件調查，切線(Tangent)是一個介於正負6000的數據，因此若要設計或動態調整可參考相關文件說明。
+
 3. Curve、Tween，動態產生曲線物件。
+Demo : AnimationCurve&Clip_byEasing
 
+在Unity的設計上，雖然可以用切線來調整曲線的平滑狀況，但過於特殊的Easing曲線並無法實踐。
+且以數學運算是計算的Easing，並不易反算為具有切線的關鍵點。
 
-
+因此，利用Unity內平滑曲線的運算方式，並對Easing function取樣方式，來模擬整條曲線的實際樣貌。
+但須注意，依據不同的曲線結構，取樣的密度會決定該線段的樣貌；取樣少，會利用Unity補完所需曲線，但這曲度未必符合Easing本身樣子。
+在理想上，若FPS在60的情況，1秒的曲線至少需取樣60個點，亦即每0.0167秒取樣一次；若30FPS，則為0.033秒。
+若選擇瞬間變動幅度大的Easing，可以看到曲線的垂直幅度變化會受到取樣方式而變動。
 
 ※ 相關文章參考：
 ---------------------------
@@ -94,6 +166,11 @@ How can I convert AnimationCurve.in/outTangent to an angle
 http://answers.unity3d.com/questions/48590/how-can-i-convert-animationcurveinouttangent-to-an.html
 http://answers.unity3d.com/questions/146760/how-do-i-modify-a-keyframecurves-tangent-in-code.html
 
+Custom Easing functions
+http://forum.unity3d.com/threads/custom-easing-functions.293141/
+
+Easing函數 CSS
+http://easings.net/zh-tw
 
 
 
