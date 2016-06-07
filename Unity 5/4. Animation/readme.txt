@@ -144,6 +144,34 @@ Demo : AnimationCurve&Clip_byEasing
 在理想上，若FPS在60的情況，1秒的曲線至少需取樣60個點，亦即每0.0167秒取樣一次；若30FPS，則為0.033秒。
 若選擇瞬間變動幅度大的Easing，可以看到曲線的垂直幅度變化會受到取樣方式而變動。
 
+※ 基於AnimationCurve為密封類別，無法透過繼承複寫函數運作。
+※ 基於物件導向設計，物件行為函數無法透過外部指派函數取代。
+
+3.1 Easing、Cubic-Bezier 曲線轉換工具
+Demo : EasingCurve
+
+Easing：Easing函數集合物件。
+	- Easing.EaseFunctionType，Easing函數型態
+
+EaseCurve：將Easing函數轉換為AnimationCurve物件。
+
+● 單一Easing函數的AnimationCurve
+
+此方式產生的函數，其時間的間隔固定，但Easing函數依據時間輸出對應的當前值。
+
+AnimationCurve curve = EaseCurve.Ease( Easing.Function, Start Value, Start Time, End Value, End Time );
+
+○ 複數Easing函數的AnimationCurve
+
+此方式產生的函數，其時間、數值皆依據Easing函數變動。
+典型上可以對兩軸(時間、數值)各設定一個Easing函數，但實際用途並不大。
+不過，CubicBezier的計算方式，其四點輸入值，分別標示了函數在兩軸的變動；這部分應該從兩個方向來看。
+	- 運動曲線，CubicBezier提供的數值是用兩軸方式產生運動曲線，這時產生曲線填入的運動曲線的時間並非固定間距，而是依據公式算出。
+	- 運動結果，使用CubicBezier產生的運動曲線計算當前值，這時候的時間是依據FrameRate產生的固定時間間隔。
+
+AnimationCurve curve = EaseCurve.Ease( Easing.Function Array, Start Value, Start Time, End Value, End Time );
+AnimationCurve curve = EaseCurve.Ease( Easing.CubicBezier( Point1.time, Point1.progress, Point2.time, Point2.progress ), Start Value, Start Time, End Value, End Time );
+
 ※ 相關文章參考：
 ---------------------------
 AnimationClip.SetCurve
@@ -166,16 +194,21 @@ How can I convert AnimationCurve.in/outTangent to an angle
 http://answers.unity3d.com/questions/48590/how-can-i-convert-animationcurveinouttangent-to-an.html
 http://answers.unity3d.com/questions/146760/how-do-i-modify-a-keyframecurves-tangent-in-code.html
 
+Interpolate
+http://wiki.unity3d.com/index.php?title=Interpolate
+
 Custom Easing functions
 http://forum.unity3d.com/threads/custom-easing-functions.293141/
 
 Easing函數 CSS
 http://easings.net/zh-tw
 
+Cubic Bezier
+http://cubic-bezier.com/#.17,.67,.83,.67
 
+抽象和密封類別以及類別成員
+https://msdn.microsoft.com/zh-tw/library/ms173150.aspx
 
-
-
-
-
+Bézier Curves for your Games: A Tutorial
+http://devmag.org.za/2011/04/05/bzier-curves-a-tutorial/
 
