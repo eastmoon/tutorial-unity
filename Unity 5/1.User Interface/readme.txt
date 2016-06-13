@@ -114,44 +114,5 @@ Demo : LayoutAndEvent
 
 Layout 在畫面動態比較強的遊戲設計上，用途會相對降低，但用於較為制式的選單介面仍有其使用價值。
 
-◎ Event listener
-
-Unity系統共有兩種類型的事件系統：
-
-1. DOM Level 1
-
-函數複寫( function override )，這是作用於MonoBehaviour物件下，提供給Unity Engine操控的共通物件。
-因此，其事件的發動皆有其條件來源，每個物件也只需對指定的函數發動行為即可。
-
-2. DOM Level 2
-
-事件偵聽( event listener )，使用UnityEvent為基底延伸的各類偵聽事件物件。
-這類事件系統用途在事件發動須執行的函數會在零或無限之間，要不是觸發但不行動，要就連動一對物件。
-
-在設計上，UI系統盡可能採用此方式，主要原因來自外部裝置觸發的事件，其牽動的相對介面問題多屬於動態設計，無法確切規劃或制定運作流程。
-
-※ 動態產生Canvas，事件系統偵聽異常問題：
-http://answers.unity3d.com/questions/889908/i-created-an-ui-button-but-click-does-not-work.html
-
-For a button to work you need the following in your scene
-
-1. A button that is a child of a canvas object
-2. The canvas object must have a GraphicRaycaster component
-3. There must be an EventSystem object somewhere in your hierarchy.
-
-Unity will build all this automatically if you create your button from the GameObject menu. But not if you add a button component manually.
-
-※ 相關文章參考：
----------------------------
-UI How to apply OnClick handler for button generated at runtime (script)
-http://answers.unity3d.com/questions/791573/46-ui-how-to-apply-onclick-handler-for-button-gene.html
-
-OnClick on button from code
-http://forum.unity3d.com/threads/onclick-on-button-from-code.264111/
-
-UnityEvent
-https://docs.unity3d.com/ScriptReference/Events.UnityEvent.html
----------------------------
-
 
 
