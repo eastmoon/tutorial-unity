@@ -30,4 +30,12 @@ Setting location the same with Android Studio download location.
 
 ---------------------------
 
+※ 相關文章參考：
+---------------------------
+Unity Github 開放源碼資源
+http://www.metatale.com/livinglab/?cat=42
+
+
+---------------------------
+
 
