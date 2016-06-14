@@ -60,12 +60,20 @@ https://en.wikibooks.org/wiki/Cg_Programming/Unity
 
 Shader程式撰寫區域，CG為Nvidia，以OpenGL、DirectX為底編制的著色器語言；GLSL則是簡化並用於手機版本，HLSL則為Microsoft DirectX版本。
 
+※ struct宣告
+
+在結構宣告式為：[型態] [名稱] : [參數]
+其中參數是指實際輸入時的資料來源，這部分需參考Unity相關文件。
+http://docs.unity3d.com/Manual/SL-VertexProgramInputs.html
+
+另外，常見雖然為POSITION，但另有名為SV_POSITION的參數。
+SV為Semantics Value的意思，其差別僅在於資料應對應何種演算，處理方式。
+
 ● Fallback
 
 若SubShader皆運行失敗，則依指定的Shader運行。
 此行可不用撰寫，亦即表示失敗時將無替代方案。
 
-◎ 
 ※ 相關文章參考：
 ---------------------------
 猫都能学会的Unity3D Shader入门指南（一）
@@ -80,6 +88,21 @@ http://lolikitty.pixnet.net/blog/post/175747992
 Cg Programming/Unity
 https://en.wikibooks.org/wiki/Cg_Programming/Unity
 
+Naidia Cg 3.1 Toolkit documentation.
+http://http.developer.nvidia.com/Cg/index_stdlib.html
+
+ShaderLab built-in values
+http://docs.unity3d.com/462/Documentation/Manual/SL-BuiltinValues.html
+
+Materials, Shaders & Textures
+http://docs.unity3d.com/Manual/Shaders.html
+
+Unity Shader Writing
+https://www.youtube.com/watch?v=zJxxXjoZE30&list=PLV4HCa5XqFT02gZOZ_Jb_A66wqDhZMCkN
+---------------------------
+
+※ 技術討論與文獻：
+---------------------------
 Drawing a circle in a 2D game.
 http://answers.unity3d.com/questions/1110655/drawing-a-circle-in-a-2d-game.html
 http://answers.unity3d.com/questions/521984/how-do-you-draw-2d-circles-and-primitives.html
@@ -90,11 +113,8 @@ http://gamedev.stackexchange.com/questions/96058/unity-5-2d-drawing-sprites-prog
 Draw a Sprite Round
 http://answers.unity3d.com/questions/975711/draw-a-sprite-round.html
 
-Materials, Shaders & Textures
-http://docs.unity3d.com/Manual/Shaders.html
-
-Unity Shader Writing
-https://www.youtube.com/watch?v=zJxxXjoZE30&list=PLV4HCa5XqFT02gZOZ_Jb_A66wqDhZMCkN
+what is the difference between "float4 pos:SV_POSITION"and "float4 pos;"
+http://forum.unity3d.com/threads/what-is-the-difference-between-float4-pos-sv_position-and-float4-pos.165351/
 	
 ---------------------------
 
