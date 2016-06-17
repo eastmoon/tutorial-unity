@@ -52,6 +52,9 @@ https://indiehoodgames.wordpress.com/2013/07/27/orthographic-camera-setup/
 
 Pixel Perfect Calculator for Orthographic Camera : Unity3D
 https://indiehoodgames.wordpress.com/2013/07/27/pixel-perfect-calculator-for-orthographic-camera-unity3d/
+
+How do you handle aspect ratio differences with Unity 2D ?
+http://gamedev.stackexchange.com/questions/79546
 ---------------------------
 
 ◎ 投影狀態

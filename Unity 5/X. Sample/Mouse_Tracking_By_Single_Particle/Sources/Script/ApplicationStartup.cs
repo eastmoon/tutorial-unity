@@ -25,5 +25,20 @@ namespace Assets.Sources.Script
             Framework.ApplicationCore.getInstance().ModuleStatrup();
             
         }
+	
+	// Update is called once per frame
+        void Update()
+        {
+            ComputeResolution();
+        }
+
+        private void ComputeResolution()
+        {
+            Camera cam = this.GetComponent<Camera>();
+            if( cam != null )
+            {
+                cam.orthographicSize = Screen.height / 2.0f;
+            }
+        }
     }
 }

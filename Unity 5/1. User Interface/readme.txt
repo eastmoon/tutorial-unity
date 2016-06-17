@@ -10,6 +10,7 @@ Unity 5的UI系統，採用的是階層式結構，以Canvas為根，UI Object�
 ※ 設計上，若要設計3D UI，將Canvas -> Render Mode -> Screen Space - Camera，藉此透過特定攝影機輸出內容。
 ※ 相關文章參考：
 ---------------------------
+Canvas
 http://docs.unity3d.com/Manual/UICanvas.html
 ---------------------------
 
@@ -21,6 +22,10 @@ Demo : ScreenResolutions
 1. Canvas Scaler
 
 Scaler是以縮放的方式調整Canvas的輸出比例，以及子物件的相關比例。
+
+『In the Canvas Scaler component, you can set its UI Scale Mode to Scale With Screen Size. With this scale mode you can specify a resolution to use as reference. If the current screen resolution is smaller or larger than this reference resolution, the scale factor of the Canvas is set accordingly, so all the UI elements are scaled up or down together with the screen resolution.』
+
+在Canvas Scaler的Scale Mode設定Scale With Screen Size，並設定參考解析度；當螢幕解析度大小或大於參考，則會跟隨參考縮放所有UI元件。
 
 2. Layout
 
@@ -38,6 +43,9 @@ http://docs.unity3d.com/Manual/UIBasicLayout.html
 
 Auto Layout
 http://docs.unity3d.com/Manual/comp-UIAutoLayout.html
+
+Designing UI for Multiple Resolutions
+http://docs.unity3d.com/Manual/HOWTO-UIMultiResolution.html
 ---------------------------
 
 ◎ 對位、尺寸、座標指定
@@ -75,6 +83,9 @@ http://forum.unity3d.com/threads/whats-the-best-practice-for-moving-recttransfor
 
 Set value on GameObject.transform.position.x with C# ?
 http://forum.unity3d.com/threads/set-value-on-gameobject-transform-position-x-with-c.66768/
+
+How to set the new Unity UI Rect Transform Anchor Presets
+http://answers.unity3d.com/questions/1007886/how-to-set-the-new-unity-ui-rect-transform-anchor.html
 ---------------------------
 
 ◎ 顯示順序

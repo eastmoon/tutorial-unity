@@ -23,10 +23,12 @@ namespace Game.Script
             Debug.Log("Application Startup Script : Module");
             // 
             Framework.ApplicationCore.getInstance().ModuleStatrup();
-            
+
+            GameObject monitor = new GameObject();
+            monitor.AddComponent<Monitor.ApplicationObserver>();
         }
 
-	// Update is called once per frame
+        // Update is called once per frame
         void Update()
         {
             ComputeResolution();
