@@ -68,4 +68,22 @@ Projection Toggles the camera’s capability to simulate perspective.
 Camera.orthographic = true | false;
 Camera.orthographicSize = {N ; N > 0};
 
+◎ 影像尺寸
+
+一個Sprite物件，其實際尺寸與最後輸出至畫面的尺寸需經過一連串計算過程來取得相對的數據。
+
+1. Retrieve sprite size and transform to world size.
+	a. The sprite size is image, make pixel transform to unit.
+	b. Consider scale make sprite change size. 
+
+2. Convert to screen space size.
+	a. orthorraphicSize is 1/2 screen height.
+
+3. Size in pixels
+
+※ 相關文章參考：
+---------------------------
+Getting a sprites size in pixels
+http://answers.unity3d.com/questions/1042119/getting-a-sprites-size-in-pixels.html
+---------------------------
 

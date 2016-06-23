@@ -5,7 +5,7 @@ using System.Text;
 
 using UnityEngine;
 
-namespace Game.Framework.View.ViewComponentsBuilder
+namespace Game.Framework.View.Builder
 {
     interface IViewComponentsBuilder
     {
@@ -14,6 +14,8 @@ namespace Game.Framework.View.ViewComponentsBuilder
         // Setting builder method
         IViewComponentsBuilder SetBuilder(IViewComponentsBuilder _builder);
         IViewComponentsBuilder SetStage(GameObject _stage);
+        IViewComponentsBuilder SetTarget(GameObject _target);
+
         // Build component
         GameObject Build(params object[] _args);
         GameObject Build(String _componentID, params object[] _args);

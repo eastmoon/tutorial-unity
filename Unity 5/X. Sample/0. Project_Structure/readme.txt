@@ -5,12 +5,16 @@
 ● Framework
 	├ Model
 	├ View
-	│  └ ViewComponentsBuilder
+	│  ├ Utility
+	│  └ Builder
 	├ Controller
 	└ Core
 
 框架，用於存放共用性強，但相依本專案的架構、物件樣式設計。
 設計上，雖針對本專案開發，但其共用性設計上應考量可重複運用至相似專案的可行性。
+
+View.Utility : 靜態公用函數，提供顯示物件所需的參數計算函數。
+View.Builder : 建立工具物件，以Builder pattern混和Factory pattern，用於動態生產所需的顯示物件。
 
 ※ 相關文章參考：
 ---------------------------

@@ -6,7 +6,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Framework.View.ViewComponentsBuilder.StandardComponent
+namespace Game.Framework.View.Builder.StandardComponent
 {
     class SpriteBuilder : ViewComponentsBuilder
     {
@@ -24,13 +24,12 @@ namespace Game.Framework.View.ViewComponentsBuilder.StandardComponent
             String name = "";
             String textureName = "";
             if (_args.Length > 0)
-            {
                 name = _args[0] as String;
+            if(_args.Length > 1)
                 textureName = _args[1] as String;
-            }
 
             // Declare variable
-            GameObject obj = null;
+            GameObject obj = this.GetTarget();
             // Create texture
             Texture2D texture = Resources.Load<Texture2D>(textureName);
             if (texture != null)
@@ -39,12 +38,16 @@ namespace Game.Framework.View.ViewComponentsBuilder.StandardComponent
                 Sprite sp = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), 1);
                 sp.name = texture.name;
                 // Create game object and setting sprite component.
-                obj = new GameObject();
                 obj.AddComponent<SpriteRenderer>().sprite = sp;
-                obj.name = name;
-                if(this.GetStage() != null)
-                    obj.transform.SetParent(this.GetStage().transform);
             }
+            else
+            {
+                // Create non-texture sprite object.
+                obj.AddComponent<SpriteRenderer>();
+            }
+            obj.name = name;
+            if (this.GetStage() != null)
+                obj.transform.SetParent(this.GetStage().transform);
             return obj;
         }
     }

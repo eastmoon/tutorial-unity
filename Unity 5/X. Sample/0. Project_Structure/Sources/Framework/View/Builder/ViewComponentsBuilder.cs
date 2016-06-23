@@ -6,7 +6,7 @@ using System.Text;
 
 using UnityEngine;
 
-namespace Game.Framework.View.ViewComponentsBuilder
+namespace Game.Framework.View.Builder
 {
     class ViewComponentsBuilder : IViewComponentsBuilder
     {
@@ -14,6 +14,7 @@ namespace Game.Framework.View.ViewComponentsBuilder
         private String mComponentID;
         private Hashtable mBuilderTable;
         private GameObject mStage;
+        private GameObject mTarget;
         // Constructor
         public ViewComponentsBuilder()
         {
@@ -34,11 +35,21 @@ namespace Game.Framework.View.ViewComponentsBuilder
             this.mStage = _stage;
             return this;
         }
-
+        public IViewComponentsBuilder SetTarget(GameObject _target)
+        {
+            this.mTarget = _target;
+            return this;        
+        }
         // Get / Set method
         protected GameObject GetStage()
         {
             return this.mStage;
+        }
+        protected GameObject GetTarget()
+        {
+            if (this.mTarget != null)
+                return this.mTarget;
+            return new GameObject();
         }
         protected void SetComponentID(String _componentID)
         {
@@ -56,10 +67,12 @@ namespace Game.Framework.View.ViewComponentsBuilder
         public GameObject Build(String _componentID, params object[] _args)
         {
             IViewComponentsBuilder builder = this.mBuilderTable[_componentID] as IViewComponentsBuilder;
+            GameObject obj = null;
             if (builder != null) { 
-                return builder.SetStage(this.mStage).Build(_args);
+                obj = builder.SetTarget(this.GetTarget()).SetStage(this.mStage).Build(_args);
+                this.SetTarget(null);
             }
-            return null;
+            return obj;
         }
         public GameObject Build(String _componentID, GameObject _stage, params object[] _args)
         {

@@ -6,7 +6,7 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Framework.View.ViewComponentsBuilder.StandardComponent
+namespace Game.Framework.View.Builder.StandardComponent
 {
     class CanvasBuilder : ViewComponentsBuilder
     {
@@ -27,7 +27,7 @@ namespace Game.Framework.View.ViewComponentsBuilder.StandardComponent
                 name = _args[0] as String;
             }
 
-            GameObject obj = new GameObject();
+            GameObject obj = this.GetTarget();
             // Setting Application Observer
             obj.AddComponent<RectTransform>();
             //
