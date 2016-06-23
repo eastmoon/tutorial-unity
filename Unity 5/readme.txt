@@ -29,6 +29,12 @@ Edit -> Preferences > External Tools > Android SDK Location
 Setting location the same with Android Studio download location.
 
 ---------------------------
+Unity stops processing input after the second time I press play - Unity 5.1.2f1
+http://forum.unity3d.com/threads/unity-stops-processing-input-after-the-second-time-i-press-play-unity-5-1-2f1.347814/
+
+The issue is that EventSystem does not seem to get an input module activated. It works for the first time, but after you change scene or exit playmode and run again, it does not work anymore. Select your EventSystem object in inspector and you can see there is no module activated. Workaround is to check "Force Module Active" and the EventSystem immediately picks it up. Yet it fails again when changing scene or running second time. :/
+
+---------------------------
 
 ※ 相關文章參考：
 ---------------------------

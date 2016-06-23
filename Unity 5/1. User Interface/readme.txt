@@ -46,6 +46,9 @@ http://docs.unity3d.com/Manual/comp-UIAutoLayout.html
 
 Designing UI for Multiple Resolutions
 http://docs.unity3d.com/Manual/HOWTO-UIMultiResolution.html
+
+Unity UGUI 原理篇(二)：Canvas Scaler 縮放核心
+http://k79k06k02k.com/blog/24/unity/unity-ugui-%E5%8E%9F%E7%90%86%E7%AF%87%E4%BA%8C%EF%BC%9Acanvas-scaler-%E7%B8%AE%E6%94%BE%E6%A0%B8%E5%BF%83
 ---------------------------
 
 ◎ 對位、尺寸、座標指定
@@ -124,6 +127,14 @@ Demo : LayoutAndEvent
 可設定子物件間格( spacing )、物件邊界( Padding )、起始角( Start corner)、起始軸( Start axis )等。
 
 Layout 在畫面動態比較強的遊戲設計上，用途會相對降低，但用於較為制式的選單介面仍有其使用價值。
+
+◎ Component
+
+※ 相關文章參考：
+---------------------------
+UI / UnityEditor.UI / UI / MenuOptions.cs
+https://bitbucket.org/Unity-Technologies/ui/src/5fc21bb4ecf4b40ff6630057edaa070252909b2e/UnityEditor.UI/UI/MenuOptions.cs?at=4.6&fileviewer=file-view-default
+---------------------------
 
 
 
