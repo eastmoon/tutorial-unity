@@ -46,7 +46,7 @@ namespace Game.Framework.View.Builder.StandardComponent
                 obj.AddComponent<SpriteRenderer>();
             }
             obj.name = name;
-            if (this.GetStage() != null)
+            if (this.GetStage() != null && this.GetStage() != obj)
                 obj.transform.SetParent(this.GetStage().transform);
             return obj;
         }

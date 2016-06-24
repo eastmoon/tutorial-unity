@@ -99,6 +99,9 @@ http://docs.unity3d.com/Manual/Shaders.html
 
 Unity Shader Writing
 https://www.youtube.com/watch?v=zJxxXjoZE30&list=PLV4HCa5XqFT02gZOZ_Jb_A66wqDhZMCkN
+
+Change Shader Property at runtime
+http://answers.unity3d.com/questions/684089/change-shader-property-at-runtime-1.html
 ---------------------------
 
 ※ 技術討論與文獻：

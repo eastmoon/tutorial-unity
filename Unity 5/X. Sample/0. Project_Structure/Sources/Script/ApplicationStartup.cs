@@ -25,8 +25,13 @@ namespace Game.Script
             // 
             Framework.ApplicationCore.getInstance().ModuleStatrup();
 
+            // UI, application monitor
             GameObject monitor = new GameObject();
             monitor.AddComponent<ApplicationObserver>();
+
+            // UI, application user interface
+            GameObject ui = new GameObject();
+            ui.AddComponent<Game.Script.UserInterface.MainFrame>();
         }
 
         // Update is called once per frame

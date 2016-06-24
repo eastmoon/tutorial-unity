@@ -28,18 +28,22 @@ namespace Game.Framework.View.Builder.StandardComponent
             }
 
             GameObject obj = this.GetTarget();
-            // Setting Application Observer
+            // 
             obj.AddComponent<RectTransform>();
+            obj.AddComponent<CanvasRenderer>();
             //
             obj.AddComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             // RWD Setting, reference : http://docs.unity3d.com/Manual/HOWTO-UIMultiResolution.html
             CanvasScaler cs = obj.AddComponent<CanvasScaler>();
-            cs.referencePixelsPerUnit = 1;
+            cs.referencePixelsPerUnit = 100;
             cs.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             cs.referenceResolution = new Vector2(950, 550);
-
+            //
             obj.AddComponent<GraphicRaycaster>();
             obj.name = name;
+            //
+            if (this.GetStage() != null && this.GetStage() != obj)
+                obj.transform.SetParent(this.GetStage().transform);
             return obj;
         }
     }
