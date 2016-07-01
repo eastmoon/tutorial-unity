@@ -51,3 +51,35 @@ http://stackoverflow.com/questions/10069340/how-to-start-an-android-activity-fro
 Android/iOS: Launch from within a Unity app another Unity app
 http://forum.unity3d.com/threads/android-ios-launch-from-within-a-unity-app-another-unity-app.222709/
 ---------------------------
+
+◎ Load scene
+
+透過場景讀取，切換場面，以此分割專案並減少冗餘物件。
+
+1. 場景設置
+
+專案中需載入的場景物件，必須先在Build Settings ( Ctrl + Shift + B )中設定並排序場景。
+※ 排序在最上層的Scene即為軟體啟動時的第一個主場景。
+
+2. 載入命令
+{
+	// 將場景載入，但不移除當前的場景內容
+	UnityEngine.SceneManagement.SceneManager.LoadScene( [Scene name], LoadSceneMode.Additive );
+	// 將場景載入，並移除當前所有的場景內容
+	UnityEngine.SceneManagement.SceneManager.LoadScene( [Scene name], LoadSceneMode.Single );
+}
+
+場景控制除了載入還有多種用途，運用此可以適當的區分專案與整體運作方式。
+
+
+※ 相關文章參考：
+---------------------------
+SceneManager
+https://docs.unity3d.com/ScriptReference/SceneManagement.SceneManager.html
+
+Scene Management in Unity 5
+http://www.alanzucconi.com/2016/03/23/scene-management-unity-5/
+
+SceneManager LoadScene Additive AND Set Active
+http://forum.unity3d.com/threads/scenemanager-loadscene-additive-and-set-active.380826/
+---------------------------
