@@ -39,7 +39,11 @@ Scources
 腳本程式，在此依據軟體專案架構文件區分。
 1. Framework，本專案的主要框架；框架會依據專案做適當調整，而不可調整部分則方入Library中。
 2. Library，C#、Unity的共用函式庫。
-3. Script，專案場景、物件實際操作的腳本程式。
+3. Script，專案場景、物件實際操作的腳本程式；依據需要應細分為UserInterface、Object2D、Object3D、Camera。
+	‧UserInterface：使用者介面類別。
+	‧Sprite：2D遊戲場景物件類別。
+	‧Object：3D遊戲場景物件類別。
+	‧Camera：遊戲內鏡頭；鏡頭應視遊戲情況而定去製作，此為非必要之項目。
 
 ◎ Project scene
 
@@ -47,17 +51,30 @@ Scources
 
 1. 專案項目檔案夾
 
-假定專案項目名為『UI』，則其檔案夾結構如下：
+假定專案項目名為『Game』，則其檔案夾結構如下：
 
 Scenes
-    └ UI.unity
+    └ Game.unity
 Resources
-    └ UI
+    └ Game
         └ *.png
 Scources
     └ Script
-        └ UI
-            └ *.cs
+        └ Game
+            └ UserInterface
+                └*.cs
+            └ Object2D
+                └*.cs
+            └ Object3D
+                └*.cs
+            └ Camera
+                └*.cs
+
+※ 注意，在此結構上，其名稱空間(Namespace)應符合同樣的結構
+‧[Project].Game.UserInterface
+‧[Project].Game.Object2D
+‧[Project].Game.Object3D
+‧[Project].Game.Camera
 
 2. 封裝
 
