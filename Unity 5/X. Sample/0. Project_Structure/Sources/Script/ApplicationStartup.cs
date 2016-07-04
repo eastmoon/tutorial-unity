@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using Library.Monitor;
 
@@ -29,9 +30,9 @@ namespace Game.Script
             GameObject monitor = new GameObject();
             monitor.AddComponent<ApplicationObserver>();
 
-            // UI, application user interface
-            GameObject ui = new GameObject();
-            ui.AddComponent<Game.Script.UserInterface.MainFrame>();
+            // Load Scene
+            SceneManager.LoadSceneAsync("ParticleStage", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync("ImageBox", LoadSceneMode.Additive);
         }
 
         // Update is called once per frame

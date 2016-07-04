@@ -71,10 +71,10 @@ Scources
                 └*.cs
 
 ※ 注意，在此結構上，其名稱空間(Namespace)應符合同樣的結構
-‧[Project].Game.UserInterface
-‧[Project].Game.Object2D
-‧[Project].Game.Object3D
-‧[Project].Game.Camera
+‧[Project].Script.Game.UserInterface
+‧[Project].Script.Game.Object2D
+‧[Project].Script.Game.Object3D
+‧[Project].Script.Game.Camera
 
 2. 封裝
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using GameRuleArchitecture.Core;
 
 namespace Game.Framework
 {
@@ -22,6 +23,12 @@ namespace Game.Framework
         public ApplicationCore SystemStartup()
         {
             Debug.Log("Application system startup.");
+            
+            // Startup game rule application
+            ApplicationFacade facade = ApplicationFacade.getInstance();
+            facade.RegisterCommand(ApplicationFacade.EVENT_STARTUP, typeof(Game.Framework.Controller.StartupCommand));
+            facade.Startup(null);
+
             return this;
         }
         // Module startup method

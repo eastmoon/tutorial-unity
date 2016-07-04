@@ -33,10 +33,12 @@ View.Builder : 建立工具物件，以Builder pattern混和Factory pattern，�
 ---------------------------
 
 ● Script
-	├ Sprite
-	└ UserInterface
+	└ [Project]
+	    ├ UserInterface
+	    ├ Object2D
+	    └ Object3D
 
-專案主程式，區分為Sprite ( 二維空間 )、UserInterface ( 使用者介面 )。
+專案主程式，區分為Object2D ( 二維空間 )、UserInterface ( 使用者介面 )。
 
 ※ 相關文章參考：
 ---------------------------
