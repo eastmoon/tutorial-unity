@@ -12,7 +12,7 @@ Unity 是當前遊戲產業用於設計遊戲的主要遊戲引擎之一，但�
 
 基於公司需要重新調研 Unity 引擎，並考量用於設計跨平台的行動端遊戲引擎，本次調研更加針對整個核心與動態元件設計。
 
-### [Unity Hub](./src/unityhub)
+### [Unity Hub & Unity 6](./src/unity6)
 
 從官方文件顯示，自 2017 年起，Unity 5.6 之後的版本是採用雲端更新的 Unity Hub 開發工具匯入所需要的 Unity 版本，若要下載 5.x 以前的版本則需去[ Unity 版本備份](https://unity3d.com/get-unity/download/archive)中選擇指定的版本下載，亦可將備份版本匯入 Unity Hub 使用。
 
