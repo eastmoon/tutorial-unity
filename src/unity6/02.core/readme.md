@@ -1,6 +1,6 @@
 # Unity 核心流程
 
-以 [Unity 5 - Core](../../unity5/0. Core) 研究為基礎，針對 Unity 6 與相關規範進行調查。
+以 [Unity 5 - Core](../../unity5/0.%20Core) 研究為基礎，針對 Unity 6 與相關規範進行調查。
 
 ## 指令
 
