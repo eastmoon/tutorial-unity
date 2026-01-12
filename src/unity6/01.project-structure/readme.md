@@ -42,7 +42,7 @@ Assets/
 │   ├── Models/       # 模型物件
 │   ├── Prefabs/      # 預製物件
 │   ├── Scenes/       # 場景物件
-│   ├── Scripts/      # 程式碼腳本檔
+│   ├── Sources/      # 程式碼
 │   ├── Sprites/      # 2D 圖像
 │   └── Textures/     # 3D 紋理
 └── Plugins/          # 額外 plugins 函示庫
@@ -67,7 +67,7 @@ Assets/
 ├── Modules/          # 通用資源目錄
 │   ├── Audio/        # 音樂資源
 │   ├── Materials/    # 材質
-│   ├── Scripts/      # 程式碼腳本檔
+│   ├── Sources/      # 程式碼
 │   ├── Sprites/      # 2D 圖像
 │   └── Textures/     # 3D 紋理
 ```
