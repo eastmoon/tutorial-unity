@@ -38,7 +38,7 @@ public class SceneSetupWindow : EditorWindow
 {
     // Declare member
     public SceneCollection sceneCollectionAsset;
-    private string SceneCollectionAssestPath = "Assets/Plugins/SceneSetup.asset";
+    private string SceneCollectionAssestPath = "Assets/Editor/SceneSetup.asset";
 
     // Declare EditorWindows necessary method
     [MenuItem("Tools/Scene Setup Manager")]

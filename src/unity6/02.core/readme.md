@@ -40,11 +40,11 @@ Unity 應用程式啟動是必需存在一個[場景 ( Scene )](https://docs.uni
 
 在 [Multi-Scene editing](https://docs.unity3d.com/2020.1/Documentation/Manual/MultiSceneEditing.html) 的 Tips and tricks 一節描述到『To avoid having to set up your hierarchy every time you restart unity or to make it easy to store different setups you can use ```EditorSceneManager.GetSceneManagerSetup``` to get a list of SceneSetup objects which describes the current setup. 』。
 
-對此，參考上述建議，設計一個插件 [SceneSetupPlugin](./app/Assets/Plugins/SceneSetupPlugin.cs)，包擃以下功能：
+對此，參考上述建議，設計一個插件 [SceneSetupPlugin](./app/Assets/Editor/SceneSetupPlugin.cs)，包擃以下功能：
 
 + 插件類別繼承 [EditorWindow](https://docs.unity3d.com/6000.3/Documentation/ScriptReference/EditorWindow.html)。
 + 宣告一個工具選單 ( Tools -> Scene Setup Manager )。
-+ 啟動會載入一個資源檔 [SceneSetup.asset](./app/Assets/Plugins/SceneSetup.asset)，若此檔案不存在會在第一次執行產生。
++ 啟動會載入一個資源檔 [SceneSetup.asset](./app/Assets/Editor/SceneSetup.asset)，若此檔案不存在會在第一次執行產生。
 + 透過 ```Save Current Setup to Asset``` 將當前場景階層的設定存入 SceneSetup.asset。
 + 透過 ```Load Setup from Asset``` 將 SceneSetup.asset 載入場景階層。
 
