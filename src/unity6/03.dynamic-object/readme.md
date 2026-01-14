@@ -1,4 +1,4 @@
-# Unity 核心流程
+# Unity 遊戲物件調用
 
 以 [Unity 5 - Core dynamic object](../../unity5/0.%20Core_dynamic_object) 研究為基礎，針對 Unity 6 與相關規範進行調查。
 
