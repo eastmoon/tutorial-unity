@@ -25,7 +25,7 @@ Unity 的 UI 系統，需以 [Canvas](https://docs.unity3d.com/Packages/com.unit
 
 ## 解析度 ( Screen Resolutions )
 
-參考範例場景 Screen 內的 [CanvasScript](./_ScreenResolutions/Sources/Script/CanvasScript.cs)。
+參考範例場景 Screen 內的 [CanvasScript](./app/Assets/_ScreenResolutions/Sources/Script/CanvasScript.cs)。
 
 預設上，Canvas 其長寬等同於可顯示螢幕的尺吋，若要修改其尺寸有以下兩種方式：
 
@@ -61,7 +61,7 @@ UI 物件皆擁有 [Rect Transform](https://docs.unity3d.com/Packages/com.unity.
 
 ## 事件系統
 
-參考範例場景 LayoutAndEvent 內的 [ApplicationStartup](./_LayoutAndEvent/Sources/Script/ApplicationStartup.cs)。
+參考範例場景 LayoutAndEvent 內的 [ApplicationStartup](./app/Assets/_LayoutAndEvent/Sources/Script/ApplicationStartup.cs)。
 
 在生成按鈕元件後，利用偵聽事件的機制在不同函數使用不同方式掛載事件處理函數：
 
