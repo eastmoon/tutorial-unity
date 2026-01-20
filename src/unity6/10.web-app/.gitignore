@@ -1,0 +1,9 @@
+# Project folder
+*.log
+
+# Application folder
+app/Library/
+app/Logs/
+app/UserSettings/
+app/Temp/
+app/Build/
