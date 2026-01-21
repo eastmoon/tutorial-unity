@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SceneSetup
   m_EditorClassIdentifier: Assembly-CSharp-firstpass::SceneCollection
   setup:
-  - m_Path: Assets/_Asynchrony/Scenes/Main.unity
+  - m_Path: Assets/_WebApp/Scenes/Main.unity
     m_IsLoaded: 1
     m_IsActive: 1
     m_IsSubScene: 0
